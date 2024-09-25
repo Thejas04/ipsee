@@ -1,16 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>IPSEE</title>
-  <link rel="stylesheet" type="text/css" href="popup.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPSEE - Cookie and ToS Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff3f3; /* Light red background for flagged website */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .alert-container {
+      background-color: #ffffff;
+      border: 2px solid #dc3545; /* Red border for flagged non-compliant website */
+      border-radius: 10px;
+      width: 400px;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .red-ball {
+      width: 50px;
+      height: 50px;
+      background-color: #dc3545;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    h3 {
+      margin: 0;
+      color: #721c24;
+      font-size: 18px;
+    }
+    p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      font-style: italic;
+      color: #721c24;
+    }
+    .summary {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .decision, .compliance, .suggestion, .explanation {
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #dc3545; /* Red exit button for flagged website */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c82333;
+    }
+  </style>
 </head>
 <body>
-  <h1>IPSEE</h1>
-  <label>
-    <input type="checkbox" id="toggleExtension"> Enable IPSEE
-  </label>
-  <div id="status"></div>
-  <script src="popup.js"></script>
+
+  <div class="alert-container">
+    <!-- Red Ball Indicator -->
+    <div class="red-ball"></div>
+
+    <!-- Flagged Website Status -->
+    <h3>Website Flagged for Personal Data Issues</h3>
+    <p>This website collects personal data without a 'Reject All' option and displays ads, violating GDPR regulations.</p>
+
+    <!-- Detailed AI Analysis Result -->
+    <div class="summary">
+      <p><strong>Summary:</strong> The website's Terms of Service (ToS) reveal that it collects personal data and serves targeted ads, but does not offer a 'Reject All' option, which is mandatory under GDPR.</p>
+    </div>
+    <div class="decision">
+      <p><strong>Decision:</strong> No reject option is provided. It's recommended to stay away from this website.</p>
+    </div>
+    <div class="compliance">
+      <p><strong>Compliance with GDPR:</strong> The website is not compliant, as it violates GDPR by not offering the user the ability to reject cookies and personal data collection.</p>
+    </div>
+    <div class="suggestion">
+      <p><strong>Suggestion:</strong> Exit the website to avoid potential misuse of your personal data.</p>
+    </div>
+    <div class="explanation">
+      <p><strong>Explanation:</strong> The website collects personal data and shows ads without giving users the option to reject all cookies, violating GDPR's user rights for transparency and control.</p>
+    </div>
+
+    <!-- Action Button -->
+    <div class="actions">
+      <button class="btn-exit">Exit Website</button>
+    </div>
+  </div>
+
 </body>
 </html>
 
